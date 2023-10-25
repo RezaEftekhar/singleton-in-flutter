@@ -31,6 +31,7 @@ class _HomePageState extends State<HomePage> {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 11, 75, 128),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,10 +46,22 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   updateMessage(singleton2.GetSecondtData());
                 },
-                child: const Text('second data'),
+                child: const Text(
+                  'second data',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(height: 20),
-              Text(message),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: Text(
+                  message,
+                  style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 20),
+                ),
+              ),
             ],
           ),
         ),
